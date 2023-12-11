@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食部落格 - 介紹</title>
+	  <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       
+</head>
+	
+	
+
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #image-container {
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        #food-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #image-description {
+            color: #666;
+        }
+
+        .navigation-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+	    <nav>
+        <div class="nav-wrapper">
+            <a href="file:///C:/Users/User/Desktop/%E4%BB%8B%E7%B4%B9.html" class="brand-logo">土城介紹</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">///</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="file:///C:/Users/User/Desktop/%E4%BB%8B%E7%B4%B9.html">美食</a></li>
+                <li><a href="badges.html">風景</a></li>
+                <li><a href="collapsible.html">特色</a></li>
+                <li><a href="mobile.html">運動中心</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="https://materializecss.com/navbar.html#!">關於我們</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+
+    <!-- 引入 Materialize CSS 和 JavaScript庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- 初始化 Sidenav -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // 初始化 Dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems);
+        });
+    </script>
+
+</body>
+<body>
+
+    <header>
+        <h1>非常推薦</h1>
+    </header>
+
+    <main>
+        <a id="image-link" href="">
+            <div id="image-container">
+                <img id="food-image" src="https://www.gomaji.com/blog/wp-content/uploads/2020/04/IMG_1798.jpg" alt="美食圖片">
+                <p id="image-description">這是第一張照片的介紹。</p>
+            </div>
+        </a>
+        <button class="navigation-button" onclick="previousImage()">上一張</button>
+        <button class="navigation-button" onclick="nextImage()">下一張</button>
+        
+		<a class="back-button" href="file:///C:/Users/User/Desktop/%E9%A6%96%E9%A0%81.html">首頁</a>
+    </main>
+
+    <style>
+        /* 在 CSS 中為連結添加底線樣式 */
+        #image-link {
+            text-decoration: underline;
+            /* 若要去除預設的連結樣式可以使用以下方式 */
+            /* text-decoration: none; */
+        }
+		.navigation-button {
+         display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 17px;
+			cursor:pointer;
+			
+        }
+		
+		.navigation-button :hover{
+			background-color:rgb(46,46,46);
+		}
+		.start-button:active{
+		background-color:rgb(70,70,70);
+		}
+		
+		.back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 70px;
+            font-size: 16px;
+            text-align: center;
+            background-color: pink;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+			cursor:pointer;
+			border-style:solid;
+			
+        }
+		.back-button:hover{
+			background-color:rgb(46,46,46);
+		}
+		.back-button:active{
+			background-color:rgb(70,70,70);
+		}
+		
+		
+		
+    </style>
+
+    <script>
+        const images = [
+            {
+                url: "https://www.gomaji.com/blog/wp-content/uploads/2020/04/IMG_1798.jpg",
+                description: "土城美食：Q勁麵疙瘩手工麵館(點擊我查看)",
+                pageLink: "file:///C:/Users/User/Desktop/%E6%96%B0%E6%96%87%E4%BB%B6%201.html" // 第一張照片的連結
+            },
+            {
+                url: "https://www.t-sports.ntpc.gov.tw/uploaddowndoc?file=tsport02/202002071336530.jpg&filedisplay=%E5%9C%9F%E5%9F%8E%E5%A4%96%E8%A7%80%E7%85%A7%E7%89%87.jpg&flag=pic",
+                description: "土城現代化運動中心 (點擊我查看)",
+                pageLink: "file:///C:/Users/User/Desktop/%E6%96%B0%E6%96%87%E4%BB%B6%202.html" // 第二張照片的連結
+            },
+            {
+                url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/7d/a4/27/caption.jpg?w=1200&h=-1&s=1",
+                description: "土城娛樂廣場: 日月光(點擊我查看)",
+                pageLink: "https://wemallsite.wixsite.com/asewemall" // 第三張照片的連結
+            },
+            {
+                url: "https://picdn.gomaji.com/uploads/stores/484/148484/251808/KEY_4080.jpg",
+                description: "點擊我查看",
+                pageLink: "https://www.12hotpot.com.tw/" // 第張照片的連結
+            }
+        ];
+
+        let currentIndex = 0;
+        const foodImage = document.getElementById("food-image");
+        const imageDescription = document.getElementById("image-description");
+
+        function showImage(index) {
+            foodImage.src = images[index].url;
+            imageDescription.textContent = images[index].description;
+        }
+
+        function previousImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+            // 更新圖片連結
+            document.getElementById("image-link").href = images[currentIndex].pageLink;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+            // 更新圖片連結
+            document.getElementById("image-link").href = images[currentIndex].pageLink;
+        }
+
+        // 初始顯示第一張圖片
+        showImage(currentIndex);
+    </script>
+
+
+
+
+      
+</body>
+
+
+</html>
