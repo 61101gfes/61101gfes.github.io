@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<title>土城運動中心</title>
+	
+	<style>
+		:root {
+  		scroll-padding-top: 64px;
+		}
+		.background-image {
+    		background-image: url('https://obs.line-scdn.net/0hUafdFzvmCk5bHSCatP91GXVCBD9of1McZCxGLnkcVmJ_KB8Re34VfX4BBHp3fVEYYChGIHoZUnkhL0tKNy9AIXkZEX9-ekwZbytB');
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    		z-index: -1;
+		background-size: cover;
+		background-position: center center;
+    		background-repeat: no-repeat;
+		}
+  		#mainContainer.container {
+  		background-color: rgba(255, 255, 255, 0.5);
+		color:black;
+		padding: 20px;
+		padding-top: 50px;
+		}
+		nav {
+    		position: fixed;
+    		top: 0;
+    		width: 100%;
+    		z-index: 10;
+  		}
+  		nav, .nav-wrapper,
+  		footer, .page-footer {
+    		background-color: #424242;
+    		z-index: 1;
+  		}
+		footer.page-footer {
+    		padding-bottom: 20px;
+		}
+		div.card .card-title {
+    		background-color: rgba(255, 255, 255, 0.3);
+		padding: 5px 10px !important;
+    		border-radius: 10px;
+		color: black !important;
+  		font-weight: bold;
+		}
+		@media screen and (max-width: 650px) {
+    			.hide-on-custom {
+      			display: none !important;
+    			}
+  		}
+	</style>
+	
+	<script>
+    	function scrollToElement(id) {
+        	var element = document.getElementById(id);
+        	if (element) {
+            	element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+		}
+    	}
+	</script>
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+    	google.charts.load('current', {'packages':['corechart']});
+		
+    	function init(tag) {
+        	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+        	var query = new google.visualization.Query(url);
+        	query.setQuery("select * where A='"+tag+"'");
+        	query.send(processData);
+    	}
+    	function processData(response) {
+        	var dataTable = response.getDataTable();
+        	var rows = dataTable.getNumberOfRows();
+		var columns = dataTable.getNumberOfColumns();
+		var tag = dataTable.getFormattedValue(0,0);
+		var datas = [];
+		for (var r=0; r<rows; r++) {
+			data = [];
+			for (var i=1; i<columns; i++){
+				data.push(dataTable.getFormattedValue(r, i));
+			}
+			datas.push(data);
+        	}
+		if (tag==="CFR"||tag==="CF SLX"){
+			fCard(datas,tag);
+		}
+    	}
+
+    	function fCard(data,tag) {	
+		var card = "";
+		for (var r=0 ; r<data.length ; r++) {
+			card+=	`
+			<div class="col s12 m12 l4">
+				<div class="card">
+					<div class="card-image">
+			  			<img src=${data[r][2]}>
+						<span class="card-title">${data[r][0]}</span>
+					</div>
+					<div class="card-content">
+			  			<p>${data[r][1]}</p>
+       						<p>重量(車架)：${data[r][3]}</p>
+					</div>
+					<div class="card-action">
+						<a href="#">詳細資訊</a>
+			   		</div>
+				</div>
+			</div>`;
+		}
+		if (tag === "CFR") {
+			document.getElementById("cardCFR").innerHTML = card;
+		}
+		else if (tag === "CF SLX") {
+			document.getElementById("cardCFSLX").innerHTML = card;
+		}
+	}
+	
+
+	</script>
+</head>
+<body>
+	<!--頂部區塊-->
+	<nav>
+    	<div class="nav-wrapper">
+      		<a href="#" onclick="scrollToElement('0')" class="brand-logo left">運動中心</a>
+      		<ul id="nav-mobile" class="right">
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">健身房</a></li>
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">游泳池</a></li>
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('3')">溜冰場</a></li>
+		</ul>
+	</div>
+	</nav>
+	
+	<!--內文-->
+	<div class="background-image"></div>
+
+	<div class="container" id="mainContainer">
+		<h4 id="0">介紹</h4>
+		<p>這是一個土城的平凡健身房</p>
+		
+		<div class="row">
+		<div class="col s12 m 12 l6" style="display: flex;">
+			<iframe width="900" height="600" src="https://www.twarchitect.org.tw/web2015/wp-content/uploads/2015/12/201502a5-1.jpg" title="exercise" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			
+		</div>
+		</div>
+		
+
+		<!--資訊-->
+		<h4 id="1">健身房 :</h4>
+		<h5>重訓室</h5>
+		<div class="row" id="cardCFR">
+			
+			<img id="work-out" src="https://farm4.staticflickr.com/3948/15413821007_e85e5807ba_z.jpg" alt="重訓圖片">
+			
+		</div>
+	
+		<h5>包含啞鈴,握推機及其他機械器材/</h5>
+
+
+		<!--游泳池-->
+		<h4 id="2">游泳池 :</h4>
+			
+			<div class="row" id="cardCFSLX">
+				<img id="swim-pool" src="https://obs.line-scdn.net/0hEKrC-gfRGmRPOjCwoNhlM2FlFBV8WEM7JAhdB2w9R0gyWVw6b1kFAGwmF1ZnDUEzcFkGUG0-R1xmCVtgIwhQC2M-AVVqXVwzewxR" alt="游泳圖片" style="width: 100%; max-width: 650px; height: auto;">
+			</div>
+			
+		<h5>上面三個是游泳專用 下面都是三溫暖 右邊有個蒸氣室/</h5>
+
+
+		<!--溜冰場-->
+		<h4 id="3">溜冰場 :</h4>
+			<div class="row" id="cardCFSLX">
+				<img id="swim-pool" src="https://p1-news.hfcdn.com/p1-news/MTUzMjA5Nm5ld3M,/1b6598bc03d03cb2_1279x959.jpg" alt="游泳圖片" style="width: 100%; max-width: 650px; height: auto;">
+			</div>
+			
+		<h5>平常人都很少 可以一直溜/</h5>
+
+	</div>
+		
+	<!--底部-->
+	<footer class="page-footer">          
+    	<div class="row">
+	<div class="col l3 m1 s2"></div>
+	<div class="col l2 m4 s10">
+ 
+	<div class="col l0 m2 s2"></div>
+	<div class="col l4 m4 s10">
+                <h5 class="white-text">官方網站 :</h5>
+                <ul>
+                  	<li><a class="grey-text text-lighten-3" href="https://tccsc.cyc.org.tw/">https://tccsc.cyc.org.tw/</a></li>
+			
+                  	
+                </ul>
+        </div>
+	<div class="col l3 m1 s0"></div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
