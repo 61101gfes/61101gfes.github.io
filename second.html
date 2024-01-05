@@ -1,72 +1,22 @@
-
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美食部落格 - 介紹</title>
-	  <!-- Materialize CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">   
-</head>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<title>土城介紹</title>
 	
-	
-
-  
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        header {
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        #image-container {
-            margin: 20px auto;
-            max-width: 80%;
-        }
-
-        #food-image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        #image-description {
-            color: #666;
-        }
-
-        .navigation-button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            cursor: pointer;
-        }
+	<style>
 		:root {
   		scroll-padding-top: 64px;
 		}
 		.background-image {
-    		background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220419/pngtree-aesthetic-background-pink-watercolor-with-leaves-line-art-image_1073275.jpg');
+    		background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSEhIWFRUXGBgXFxUXFxcXFRUYFx0bFxcXFxUYHSggGBolHR0XITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0OFQ8PFSsZFR0rKy0rLSstKzctLS0rKysrLTc3LTctLTcrNzc3LTctNy0tKysrKzctLSstLS0rKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAABAgMABAUH/8QALxAAAgEBBQcEAwEAAwEAAAAAAAECEQMhMXGBBCIyQbHB8FFhkdESQqFyguHxYv/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8A+qoWnIeoplSrEeQqQ0kEI358Ct78dejHa8+BJR3o5voB1IDQYLy4WXmHuAKYP0dfkZoahK3snKiqqc63vNe4U1SMuLQvQha8egBM0E1Ahl2HgLQezQBaOfZsP+T6s6Gc+zYay6hT0vFaKcxGgh+Qj8+R2I11+gJ7Q915Magu0LdeQ8QMkGBqDRQBRQmsSoEPx33kupVImuN5LqyqAnPzWgXGjroal+q7DBQYpQUInUxmYKMfUWjGg7qmYCJXjMEUNMIR8vPQVLejm+jHp58CRe/HXowrroJJDsWauAz56dkahuePp2CAKELRb+nc6GQteLTuEZIzDEyy5+uIDpDQJjxd4DyRz7LhrLqdLObZXj7OXUNHfnnwLQoxKBkwr8+UU9BAI7Qt15DpC7Rg8mOgohggPlz8xNF/wIdFFgTTKRdwWJR43ku5QT93ku49AFphmjL7NJYZo0fPigBRqGCETcfcwzp4whUbJXUMGzVxkVAjiNIWKvHaIEEit+OvRlGJHjjr0YV1MDDJGASDu+BqAirloOAhG0W9odFLyFpx6AFGMhkEZhjBZmSHiFahy7Nz93K7U7Dl2ZY5y6gO0BjMDQQ7EaKSEYEdpVzyHiJtPCytArIKMEI0VgUjFLAVIcKkuN5LuPIWm+8kM0Alp9dUMvs0l58Gp3A1DBMsQEaCMmYDnsm/xV1Patf7kM0NGNEJF1rdzu90UZYjGoMRCSROC3o5vox5J/ljdTD38qCHFHN9ArqkgBtJUWDeQJYALHDz2GYI4eewzAVkZcWhecaqmBCXFoAQoSKdXWmN1PS7H3rUcIYaAsRohYY5tn55vqy3471aulKU5Y9fslYRxzfX/wAAdIWQW3XDliFxALA0MJaxdLnS9fHNBEtoweRWSJ2+DGtK3UpjfX09gpkOhQoIKKchEjWsaxaTpXmrgpf20Q8oix4tF3HtG+SzAS0w17oNMDWiu1XVDNAZi0H5iTs609nX4ADZjNGBpY4IUFnK5c6qoX5/CgoZom2yjIUrEXFHXoUkTXFHXoEddRWMCgCww0QzFjgNJAZkLRb+ncvIhacWgGigoCGCtFjoVDoEEhsuD/1I6DlsZ0r/AKfUorIDC137CtkVQDMjNBlDaFuvJj0F2hbrHqFExgoBl3GiLEeIE1xvJdx2J+zyXVlGEJaYeewwJ+fw32FEDQTBEp4mKMwHNFYZfQ1BbLD05fA8pUCtHEZiLEpIBakv3jr0KsnTfjr0YHYJLDkOJP0AWCup7DMSLwfK7oMAWQlx6F5EJ8egQyDUEcAoKKGFbHAdHHBYr/67nYc1nzzfcBkBoZuiBUB2AZchUBHauFjibQt1jxAZhQtRkAyGjgJFjwwAT93kh2J+zyRRgTtEaPnyC0+utO5orn5jUIdsAEFoBE/KGCYCcFdoaY0cECeIUsXePJklih5AFiV3469GFifvHXoyjsEmxiUW6Vfq+fKt38oRGSfpQoJ+V6THTuQATuIWnFodBz2nFp3AdMKFTCmAW8Bk7xWaLAs2QsOf+mVfnySsMHm+oU8lcI2PN3E5gVTuAsDCgJtL3HkFMTanuvIdANUMWBMKYRlIpBkikAFT3nku5RslHieSKAJaGSoCYE3V18qBSRmBozAVsxqowCxFtO30aCuRp+fIUIsaTJ17dh5BCp4ZCxe/HXoyhGPFDzkwruqLIyNNhCvGK85jrBeehNu9ZLuOmAaHPa8WncumQtOLQAhQDIDPDQZMWeHnpUYCnLz1JbO7nm+o7w17k7HB5vqFUlhqTTKN+epICtbhHhquwydy0A8PgIjtT3WUTJ7Twy85FAo0CgBQRkPB9ycfruUj9gLF7zyXcrUguN5FkAsgVvfnNoMvP4CLv+eoDyMLJjMBGgGaMAkXgLLBZBjgCQUkpYZorIhPlmvorUI1egi4o69GERPfjr0YV3IWTxCLJhAb3lku4y5eciX7fHdD+mXYAtkLR72haRCa3tO4DhQpqgGXLzkMhWGID1uEsMHm+o1bsiez8831CqSdzzuFckF9yb+/oFUg92Ohn9C2buWXYLfYCe0Pdl57FER2p7rKRdwKYZef0U0QjRfmrKRJcx0AIPeeSLHPHjeSLgBsSLvfnMZkrPF69foCqM5XmYGAkpmNLEwCr6BJgWBpATnyzp/GyjI2uMf9dpItUoCEi96Ob6DE4PfWvRkV6Asmaos3iEI3f8FKieua6IIBbIT4tCsmRtHv6LqA9QoSoYsBvo0WbxAs/OwFJLFeYE9nw1l1HT888uJbPhq+rArUnaO55N/A7I7Rwyyf9qBaCwyFqGDwA/NAJ7Tg8isTn2p3PIsmFpqhYjY+QRq3ofzsSlj55iOny1AEeN5LuXOaz4tF3LAZkovv9lHyzESuWTAo2LUMhagByMSlK8IBRmKmCoE7SV8c+zLNkJu+OdP4yrKM2Ss3vxzl0Y0n3IWEt+OvRgemLaS6G/L3EtHcAW8c/oavck3jn3Q7+wGkzmlx6dy03cc7e+8kQUDFgMA8sDJiSld8f24NaL1ArF4E7HDV9w1EsJXavqBZkNpdzyZVMjbu55dgLRkKzRFYEtpdzy+yxx7S+LJ9DrqUEpEmZMgZO/zzAaHqSjjXC8dSAMXvaLqytTni995Lqy1QBJ3rMVO5ZdjTlfT3FjK5Zdiird4smZsWbIJTjeYxgDUzMYCFpK+OfZl2YwEpyOewlvxzfR0MY1B6f5eeMS0dbjGAWt2vcb8sLjGIFmyFd95dwmArUyCYgWt68wGrcYwGUuwljw6vqYwFakNoe6/PUxgLRdyEkzGA4tqlil6XHcmYxqg1NJmMZGg/v+hreYwCxlvPJdWWVfH/ANGMUTm3X+9RZNpaNfxhMUO3eTkwmJRzytMzGMQf/9k=');
     		position: fixed;
     		top: 0;
     		left: 0;
@@ -109,74 +59,125 @@
       			display: none !important;
     			}
   		}
+	</style>
+	
+	<script>
+    	function scrollToElement(id) {
+        	var element = document.getElementById(id);
+        	if (element) {
+            	element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+		}
+    	}
+	</script>
 
-    </style>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+    	google.charts.load('current', {'packages':['corechart']});
+		
+    	function init(tag) {
+        	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+        	var query = new google.visualization.Query(url);
+        	query.setQuery("select * where A='"+tag+"'");
+        	query.send(processData);
+    	}
+    	function processData(response) {
+        	var dataTable = response.getDataTable();
+        	var rows = dataTable.getNumberOfRows();
+		var columns = dataTable.getNumberOfColumns();
+		var tag = dataTable.getFormattedValue(0,0);
+		var datas = [];
+		for (var r=0; r<rows; r++) {
+			data = [];
+			for (var i=1; i<columns; i++){
+				data.push(dataTable.getFormattedValue(r, i));
+			}
+			datas.push(data);
+        	}
+		if (tag==="CFR"||tag==="CF SLX"){
+			fCard(datas,tag);
+		}
+    	}
+
+    	function fCard(data,tag) {	
+		var card = "";
+		for (var r=0 ; r<data.length ; r++) {
+			card+=	`
+			<div class="col s12 m12 l4">
+				<div class="card">
+					<div class="card-image">
+			  			<img src=${data[r][2]}>
+						<span class="card-title">${data[r][0]}</span>
+					</div>
+					<div class="card-content">
+			  			<p>${data[r][1]}</p>
+       						<p>重量(車架)：${data[r][3]}</p>
+					</div>
+					<div class="card-action">
+						<a href="#">詳細資訊</a>
+			   		</div>
+				</div>
+			</div>`;
+		}
+		if (tag === "CFR") {
+			document.getElementById("cardCFR").innerHTML = card;
+		}
+		else if (tag === "CF SLX") {
+			document.getElementById("cardCFSLX").innerHTML = card;
+		}
+	}
+	
+
+	</script>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="https://61101gfes.github.io/index.html" class="brand-logo">土城介紹</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">///</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="file:///C:/Users/User/Desktop/%E4%BB%8B%E7%B4%B9.html">美食</a></li>
-                <li><a href="badges.html">風景</a></li>
-                <li><a href="https://61101gfes.github.io/workout.html">土城運動中心</a></li>
-                <li><a href="mobile.html">板橋耶誕城</a></li>
-            </ul>
-        </div>
-    </nav>
+	<!--頂部區塊-->
+	<nav>
+    	<div class="nav-wrapper">
+      		<a href="#" onclick="scrollToElement('0')" class="brand-logo center">土城總攬</a>
+      		<ul id="nav-mobile" class="right">
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">地圖</a></li>
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">重點</a></li>
+        		<li class="hide-on-custom"><a href="https://61101gfes.github.io/index.html" >回首頁</a></li>
+		</ul>
+	</div>
+	</nav>
+	
+	<!--內文-->
+	<div class="background-image"></div>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="https://materializecss.com/navbar.html#!">關於我們</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-    </ul>
+	<div class="container" id="mainContainer">
+		<h4 id="1">地圖</h4>
+		<p>土城位置</p>
+		
 
-    <!-- 引入 Materialize CSS 和 JavaScript庫 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
+		<iframe
+			width="600"
+			height="450"
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.9430080314755!2d121.46691171500574!3d24.965071447491666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab83f28a9e0b%3A0xc8d79b3dc9b52be3!2z5paw5YyX5biC5Y2A5aSn!5e0!3m2!1szh-TW!2stw!4v1637024979789!5m2!1szh-TW!2stw" allowfullscreen>
+		</iframe>
 
-    <!-- 初始化 Sidenav -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });
-    </script>
+		
 
+		<!--資訊-->
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        // 初始化 Dropdown
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.dropdown-trigger');
-            var instances = M.Dropdown.init(elems);
-        });
-    </script>
-
-</body>
-<body>
-
-    <header>
-        <h1>非常推薦</h1>
-    </header>
-
+	
+	<h4 id="2">重點 :</h4>
     <main>
         <a id="image-link" href="">
 
             <div id="image-container">
-                <img id="food-image" src="https://www.gomaji.com/blog/wp-content/uploads/2020/04/IMG_1798.jpg" alt="美食圖片">
+                <img id="food-image" src="https://www.gomaji.com/blog/wp-content/uploads/2020/04/IMG_1798.jpg" alt="美食圖片" style="width: 100%; max-width: 900px; height: auto;">
                 <p id="image-description">這是第一張照片的介紹。</p>
             </div>
         </a>
         <button class="navigation-button" onclick="previousImage()">上一張</button>
         <button class="navigation-button" onclick="nextImage()">下一張</button>
         
-		<a class="back-button" href="https://61101gfes.github.io/index.html">首頁</a>
+		
     </main>
-
+	<a class="back-button center" href="https://61101gfes.github.io/index.html">首頁</a>
     <style>
         /* 在 CSS 中為連結添加底線樣式 */
         #image-link {
@@ -220,7 +221,7 @@
 			
         }
 		.back-button:hover{
-			background-color:rgb(46,46,46);
+			background-color:rgb(90,70,46);
 		}
 		.back-button:active{
 			background-color:rgb(70,70,70);
@@ -280,12 +281,39 @@
         // 初始顯示第一張圖片
         showImage(currentIndex);
     </script>
+	
+	
+		<!--<h4 id="3">健身房 :</h4>-->
+		<!--<h5>重訓室</h5>
+		<div class="row" id="cardCFR">
+			
+			<img id="work-out" src="https://farm4.staticflickr.com/3948/15413821007_e85e5807ba_z.jpg" alt="重訓圖片">
+			
+		</div>
+	
+		<h5>包含啞鈴,握推機及其他機械器材/</h5>
 
 
 
-
-      
+	</div>
+		
+	<!--底部-->
+	<footer class="page-footer">          
+    	<div class="row">
+	<div class="col l3 m1 s2"></div>
+	<div class="col l2 m4 s10">
+ 
+	<div class="col l0 m2 s2"></div>
+	<div class="col l4 m4 s10">
+                <h5 class="white-text">官方網站 :</h5>
+                <ul>
+                  	<li><a class="grey-text text-lighten-3" href="https://tccsc.cyc.org.tw/">https://tccsc.cyc.org.tw/</a></li>
+			
+                  	
+                </ul>
+        </div>
+	<div class="col l3 m1 s0"></div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
-
-
 </html>
