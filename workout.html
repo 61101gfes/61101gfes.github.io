@@ -41,7 +41,7 @@
   		}
   		nav, .nav-wrapper,
   		footer, .page-footer {
-    		background-color: #424242;
+    		background-color: rgba(0, 20, 170, 0.8);
     		z-index: 1;
   		}
 		footer.page-footer {
@@ -70,61 +70,7 @@
     	}
 	</script>
 
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-    	google.charts.load('current', {'packages':['corechart']});
-		
-    	function init(tag) {
-        	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-        	var query = new google.visualization.Query(url);
-        	query.setQuery("select * where A='"+tag+"'");
-        	query.send(processData);
-    	}
-    	function processData(response) {
-        	var dataTable = response.getDataTable();
-        	var rows = dataTable.getNumberOfRows();
-		var columns = dataTable.getNumberOfColumns();
-		var tag = dataTable.getFormattedValue(0,0);
-		var datas = [];
-		for (var r=0; r<rows; r++) {
-			data = [];
-			for (var i=1; i<columns; i++){
-				data.push(dataTable.getFormattedValue(r, i));
-			}
-			datas.push(data);
-        	}
-		if (tag==="CFR"||tag==="CF SLX"){
-			fCard(datas,tag);
-		}
-    	}
 
-    	function fCard(data,tag) {	
-		var card = "";
-		for (var r=0 ; r<data.length ; r++) {
-			card+=	`
-			<div class="col s12 m12 l4">
-				<div class="card">
-					<div class="card-image">
-			  			<img src=${data[r][2]}>
-						<span class="card-title">${data[r][0]}</span>
-					</div>
-					<div class="card-content">
-			  			<p>${data[r][1]}</p>
-       						<p>重量(車架)：${data[r][3]}</p>
-					</div>
-					<div class="card-action">
-						<a href="#">詳細資訊</a>
-			   		</div>
-				</div>
-			</div>`;
-		}
-		if (tag === "CFR") {
-			document.getElementById("cardCFR").innerHTML = card;
-		}
-		else if (tag === "CF SLX") {
-			document.getElementById("cardCFSLX").innerHTML = card;
-		}
-	}
 	
 
 	</script>
@@ -133,7 +79,7 @@
 	<!--頂部區塊-->
 	<nav>
     	<div class="nav-wrapper">
-      		<a href="https://61101gfes.github.io/intro.html" onclick="scrollToElement('0')" class="brand-logo left">運動中心</a>
+      		<a href="https://61101gfes.github.io/second.html" onclick="scrollToElement('0')" class="brand-logo center">運動中心</a>
       		<ul id="nav-mobile" class="right">
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">健身房</a></li>
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">游泳池</a></li>
