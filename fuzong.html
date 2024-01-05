@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<title>板橋耶誕城</title>
+	
+	<style>
+		:root {
+  		scroll-padding-top: 64px;
+		}
+		.background-image {
+    		background-image: url('https://img.lovepik.com/background/20211020/large/lovepik-christmas-background-material-image_400074111.jpg');
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    		z-index: -1;
+		background-size: cover;
+		background-position: center center;
+    		background-repeat: no-repeat;
+		}
+  		#mainContainer.container {
+  		background-color: rgba(255, 255, 255, 0.5);
+		color:black;
+		padding: 20px;
+		padding-top: 50px;
+		}
+		nav {
+    		position: fixed;
+    		top: 0;
+    		width: 100%;
+    		z-index: 10;
+  		}
+  		nav, .nav-wrapper,
+  		footer, .page-footer {
+    		background-color: rgba(0, 100, 0, 1);;
+    		z-index: 1;
+  		}
+		footer.page-footer {
+    		padding-bottom: 20px;
+		}
+		div.card .card-title {
+    		background-color: rgba(255, 255, 255, 0.3);
+		padding: 5px 10px !important;
+    		border-radius: 10px;
+		color: black !important;
+  		font-weight: bold;
+		}
+		@media screen and (max-width: 650px) {
+    			.hide-on-custom {
+      			display: none !important;
+    			}
+  		}
+		
+		
+		button {
+            padding: 10px 20px;
+            background-color: rgba(255, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: rgba(200, 0, 0, 0.8);
+        }
+
+        #prevBtn {
+            margin-right: 100px; /* 調整上一頁按鈕的右邊距 */
+        }
+		
+		
+		button2 {
+            padding: 10px 20px;
+            background-color: rgba(255, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button2:hover {
+            background-color: rgba(200, 0, 0, 0.8);
+        }
+
+        #prevBtn {
+            margin-right: 100px; /* 調整上一頁按鈕的右邊距 */
+        }
+		
+		button3 {
+            padding: 10px 20px;
+            background-color: rgba(255, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button3:hover {
+            background-color: rgba(200, 0, 0, 0.8);
+        }
+
+        #prevBtn {
+            margin-right: 100px; /* 調整上一頁按鈕的右邊距 */
+        }
+	</style>
+	
+	<script>
+    	function scrollToElement(id) {
+        	var element = document.getElementById(id);
+        	if (element) {
+            	element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+		}
+    	}
+	</script>
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+    	google.charts.load('current', {'packages':['corechart']});
+		
+
+
+	</script>
+</head>
+<body>
+	<!--頂部區塊-->
+	<nav>
+    	<div class="nav-wrapper">
+      		<a href="https://61101gfes.github.io/index.html" onclick="scrollToElement('0')" class="brand-logo center">首頁</a>
+      		<ul id="nav-mobile" class="right">
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">府中商圈</a></li>
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">萬坪公園</a></li>
+        		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('3')">大遠百通道</a></li>
+		</ul>
+	</div>
+	</nav>
+	
+	<!--內文-->
+	<div class="background-image"></div>
+
+	<div class="container" id="mainContainer">
+		<h4 id="0">全景</h4>
+		<p>勢力範圍</p>
+		
+		<div class="row">
+		<div class="col s12 m 12 l6" style="display: flex;">
+			<iframe width="1500" height="650" src="https://tnimage.s3.hicloud.net.tw/photos/2023/11/24/1700829760-65609a4096b80.jpg" title="exercise" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			
+		</div>
+		</div>
+		
+
+		<!--資訊-->
+		<h4 id="1"><府中商圈> </h4>
+		<h5>薑餅屋 (實際看好像沒這麼好看)</h5>
+		<div class="row" id="cardCFR">
+			
+			<img id="work-out" src="https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6558B946AF9A21700313414.jpeg" alt="重訓圖片">
+			
+		</div>
+		<button onclick="prevImage()">上一頁</button>
+		<button onclick="nextImage()">下一頁</button>
+		<script>
+        var images = [
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6558B946AF9A21700313414.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/656849C10AC381701333441.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/655C895377CFD1700563283.jpeg",
+			
+            // 添加更多圖片的URL
+        ];
+
+        var currentImageIndex = 0;
+
+        function showImage() {
+            var img = document.getElementById("work-out");
+            img.src = images[currentImageIndex];
+        }
+
+        function prevImage() {
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+            showImage();
+        }
+
+        function nextImage() {
+            currentImageIndex++;
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            showImage();
+        }
+
+        showImage(); // 初始顯示第一張圖片
+		</script>
+		<h5>府中廣場燈區-薑餅樂園 ：金色魔法森林
+</h5>
+
+
+		<!--游泳池-->
+    <h4 id="2"><萬坪公園></h4>
+    <div class="row" id="cardCFSLX">
+        <img id="swim-pool" src="https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6558B98B626F61700313483.jpeg" alt="游泳圖片" style="width: 100%; max-width: 650px; height: auto;">
+    </div>
+    <button2 onclick="prevImage2()">上一頁</button2>
+    <button2 onclick="nextImage2()">下一頁</button2>
+    <script>
+        var images2 = [
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6558B98B626F61700313483.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/655C89322C2F61700563250.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/656849A703E461701333415.jpeg",
+            // 添加更多圖片的URL
+        ];
+
+        var currentImageIndex2 = 0;
+
+        function showImage2() {
+            var img = document.getElementById("swim-pool");
+            img.src = images2[currentImageIndex2];
+        }
+
+        function prevImage2() {
+            currentImageIndex2--;
+            if (currentImageIndex2 < 0) {
+                currentImageIndex2 = images2.length - 1;
+            }
+            showImage2();
+        }
+
+        function nextImage2() {
+            currentImageIndex2++;
+            if (currentImageIndex2 >= images2.length) {
+                currentImageIndex2 = 0;
+            }
+            showImage2();
+        }
+
+        showImage2(); // 初始顯示第一張圖片
+    </script>
+</body>
+
+			
+		<h5>白爛貓是今年主題</h5>
+
+
+		<!--溜冰場-->
+		<h4 id="3"><超水走廊></h4>
+			<div class="row" id="cardCFSLX">
+				<img id="swim-pool3" src="https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CCD7287521699859671.jpeg" alt="游泳圖片" style="width: 100%; max-width: 650px; height: auto;">
+			</div>
+			<button3 onclick="prevImage3()">上一頁</button3>
+			<button3 onclick="nextImage3()">下一頁</button3>
+    <script>
+        var images3 = [
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CCD7287521699859671.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD1CD3BFC1699859740.jpeg",
+            "https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD241D3A61699859748.jpeg",
+			"https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD2D0DEB31699859757.jpeg",
+			"https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD3581A871699859765.jpeg",
+			"https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD3EA51A91699859774.jpeg",
+			"https://im.marieclaire.com.tw/m800c533h100b0/assets/mc/202311/6551CD43E19B41699859779.jpeg",
+            // 添加更多圖片的URL
+        ];
+
+        var currentImageIndex3 = 0;
+
+        function showImage3() {
+            var img = document.getElementById("swim-pool3");
+            img.src = images3[currentImageIndex3];
+        }
+
+        function prevImage3() {
+            currentImageIndex3--;
+            if (currentImageIndex3 < 0) {
+                currentImageIndex3 = images3.length - 1;
+            }
+            showImage3();
+        }
+
+        function nextImage3() {
+            currentImageIndex3++;
+            if (currentImageIndex3 >= images3.length) {
+                currentImageIndex3 = 0;
+            }
+            showImage3();
+        }
+
+        showImage3(); // 初始顯示第一張圖片
+    </script>
+			
+		<h5>整條路都人 走到一半會突然停下來拍照</h5>
+
+	</div>
+		
+	<!--底部-->
+	<footer class="page-footer">          
+    	<div class="row">
+		<div class="col l3 m1 s2"></div>
+		<div class="col l2 m4 s10">
+	 
+		<div class="col l0 m2 s2"></div>
+		<div class="col l4 m4 s10">
+                <h5 class="white-text ">地點 :</h5>
+                <ul>
+                  	<li><a class="grey-text text-lighten-3" href="https://www.google.com/maps?q=%E6%9D%BF%E6%A9%8B%E8%80%B6%E8%AA%95%E5%9F%8E&rlz=1C1GCEA_enTW1074TW1074&gs_lcrp=EgZjaHJvbWUqDAgBEEUYOxixAxiABDIGCAAQRRg7MgwIARBFGDsYsQMYgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIGCAYQRRg9MgYIBxBFGD3SAQg4NDM2ajBqN6gCALACAA&um=1&ie=UTF-8">https://板橋耶誕城地圖.com/</a></li>
+			
+                  	
+                </ul>
+        </div>
+		<div class="col l3 m1 s0"></div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html> 
