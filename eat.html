@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Example</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav li {
+            cursor: pointer;
+        }
+        
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+        }
+
+        .equal-sized-images img {
+            width: 100%; /* 設定相同的寬度 */
+            height: auto;
+            object-fit: cover; /* 保持寬高比例並填充整個容器 */
+            display: block;
+        }
+
+        .text-container {
+            grid-column: span 2; /* 文字占滿兩列 */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+		
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>餐廳介紹</h1>
+    </header>
+
+    <nav>
+        <ul>
+
+            <li onclick="changeContent('page1')">兩支</li>
+            <li onclick="changeContent('page2')">布朗沃</li>
+            <li onclick="changeContent('page3')">麥當勞</li>
+            <li onclick="changeContent('page4')">深海魚美食坊</li>
+        </ul>
+    </nav>
+    <section class="equal-sized-images">
+        <div class="text-container" id="content">
+            <p>在土城鄰近海山捷運站,我認為最好吃的四家美食</p>
+
+            <img src="https://p1-news.hfcdn.com/p1-news/Mjk1ODc5bmV3cw,,/ed751dc414e60161.jpg/qs/r=16888" alt="Page 1 Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024  Website</p>
+    </footer>
+
+    <script>
+        function changeContent(page) {
+            var textContainer = document.getElementById("content");
+    
+            switch (page) {
+            
+                case 'page1':
+                    textContainer.innerHTML = 
+                    `  
+                            <h1>兩支北方麵食館</h1>
+
+                            <a href="https://www.facebook.com/top2food">Click here to visit website</a>
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/1b/01/44/cc/caption.jpg" alt="Page 1 Image">
+
+                            <p></p>
+                            <p>介紹</p>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h2>豬肉餡餅</h2>
+                                    <img src="https://shawn365.com.tw/wp-content/uploads/2023/03/20230301095542_55.jpg" alt="Page 1 Image">
+                                    <p>第一名</p>
+                                    <p>每次吃都會噴到衣服</p>
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h3>小籠包</h3>
+                                    <img src="https://cc.tvbs.com.tw/img/program/upload/2023/03/23/20230323115901-e6493593.jpg" alt="Page 1 Image">
+                                    <p>第二名</p>
+                                    <p>小輸餡餅</p>
+                                    
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h4>酸菜白肉鍋</h4>
+                                    <img src="https://3.bp.blogspot.com/-oyKIgXZR9NM/WhAAyHdxskI/AAAAAAAAV6I/3IF8w8aQEq4XT_-Hwv8BItOZMr7A2_yBQCLcBGAs/s1600/20%2B%25E5%2585%25A9%25E6%2594%25AF%25E5%258C%2597%25E6%2596%25B9%25E9%25BA%25B5%25E9%25A3%259F%25E9%25A4%25A8%2B%25E6%2596%25B0%25E8%258E%258A%25E7%25BE%258E%25E9%25A3%259F%2B%25E6%2596%25B0%25E8%258E%258A%25E6%2596%25B0%25E9%2596%258B%25E5%25BA%2597%2B%25E6%2596%25B0%25E5%258C%2597%25E7%25BE%258E%25E9%25A3%259F.JPG" alt="Page 1 Image">
+                                    <p>第三名</p>
+                                    <p>很貴很貴</p>
+                                </div>
+                            </section>
+							                            <ul>
+                                    <li>地址:236 新北市土城區裕民路129號</li>
+                                    <li>電話:02 2262 9888</li>
+                            </ul>
+                           
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h5>這是菜單</h5>
+                                    <img src="https://3.bp.blogspot.com/-k5P7tVAiusk/WhACf6d2sGI/AAAAAAAAV60/ExAMZjW57hktqAIde9RYOMlUTJ0oUAS8QCLcBGAs/s1600/2%2B%25E5%2585%25A9%25E6%2594%25AF%25E5%258C%2597%25E6%2596%25B9%25E9%25BA%25B5%25E9%25A3%259F%25E9%25A4%25A8%2B%25E6%2596%25B0%25E8%258E%258A%25E7%25BE%258E%25E9%25A3%259F%2B%25E6%2596%25B0%25E8%258E%258A%25E6%2596%25B0%25E9%2596%258B%25E5%25BA%2597%2B%25E6%2596%25B0%25E5%258C%2597%25E7%25BE%258E%25E9%25A3%259F.JPG" alt="Page 1 Image"
+                                    <p></p>
+                                    <p></p> 
+                                </div>
+                            </section>
+                            
+                           
+                            
+                    `;
+                
+                    break;
+                case 'page2':
+                    textContainer.innerHTML = 
+                    `  
+                            <h1>布朗沃</h1>
+
+                            <a href="https://www.facebook.com/people/%E5%B8%83%E6%9C%97%E6%B2%83%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5/100066346796700/">Click here to visit website</a>
+                            <img src="https://eattaipei.tw/wp-content/uploads/2020/07/071320_0408_1.jpg" alt="Page 1 Image">
+
+                            <p></p>
+                            <p>介紹</p>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h2>番茄海鮮義大利麵</h2>
+                                    <img src="https://www.walkerland.com.tw/image/1200/0/poi/p44228/m37560/890236bb7a9fbc449dc2510aad0a5e59dc242194.jpg" alt="Page 1 Image">
+                                    <p>第一名</p>
+                                    <p>找不到對手</p>
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h3>白酒蛤蜊義大利麵</h3>
+                                    <img src="https://i0.wp.com/alexyehblog.com/wp-content/uploads/2022/12/%E5%B8%83%E6%9C%97%E6%B2%83%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5_31-3.jpg?fit=1024%2C576&ssl=1" alt="Page 1 Image">
+                                    <p>別人的第一名</p>
+                                    <p>很多人都點這個</p>
+                                    
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h4>焗烤</h4>
+                                    <img src="https://www.popdaily.com.tw/u/202006/caaf4d0f-48c9-4de0-b71d-df69cd93b4ab.jpg" alt="Page 1 Image">
+                                    <p>第三名</p>
+                                    <p>起司真的好香</p>
+                                </div>
+                            </section>
+							
+							<ul>
+                                    <li>地址:236 新北市土城區學府路一段135號</li>
+                                    <li>電話:02 8262 7868</li>
+                            </ul>
+                           
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h5>這是菜單</h5>
+                                    <img src="https://pic.pimg.tw/annali0321/1431326608-1127500334.jpg" alt="Page 1 Image"
+                                    <p></p>
+                                    <p></p> 
+                                </div>
+                            </section>
+                            
+                           
+                            
+                    `;
+                
+                    break;
+                case 'page3':
+                    textContainer.innerHTML = `  
+                            <h1>麥當勞</h1>
+
+                            <a href="https://www.mcdonalds.com/tw/zh-tw.html">Click here to visit website</a>
+                            <img src="https://s.yimg.com/ny/api/res/1.2/a9HjhSAhn96hSpIWe8uyIg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTQ5OQ--/https://media.zenfs.com/ko/gotv_ctitv_com_tw_678/6c2b30886bbfcb1e1312352c9aad4f65" alt="Page 1 Image">
+
+                            <p>在第十幾年</p>
+                            <p>陪伴在地孩童一起長大 遊樂設施被拆掉了</p>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h2>兒童餐</h2>
+                                    <img src="https://doqvf81n9htmm.cloudfront.net/data/crop_article/119499/shutterstock_750626503.jpg_1140x855.jpg" alt="Page 1 Image">
+                                    
+                                    <p>沒有玩具就不推薦了</p>
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h3>勁辣雞腿堡</h3>
+                                    <img src="https://i2.momoshop.com.tw/1693154702/goodsimg/0009/779/599/9779599_R_m.webp" alt="Page 1 Image">
+                                    <p>第一名</p>
+                                    <p>漢堡界的偶像</p>
+                                    
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h4>薯條</h4>
+                                    <img src="https://s.newtalk.tw/album/news/780/62bfd79256383.jpg" alt="Page 1 Image">
+                                    <p>第二名</p>
+                                    <p>拿到只有這樣的會氣死</p>
+                                </div>
+                            </section>
+							
+							<ul>
+                                    <li>地址:236 新北市土城區裕民路180號</li>
+                                    <li>電話:02 2263 5311</li>
+                            </ul>
+                           
+
+                            
+                           
+                            
+                    `;
+                
+                    break;
+                case 'page4':
+                    textContainer.innerHTML = `  
+                            <h1>深海魚美食坊</h1>
+ 
+                            <a href="https://www.facebook.com/pages/%E6%B7%B1%E6%B5%B7%E9%AD%9A%E7%BE%8E%E9%A3%9F%E5%9D%8A/263863751038136/">Click here to visit website</a>
+                            <img src="https://pic.pimg.tw/ss1985030738/1425222002-3743189390_n.jpg" alt="Page 1 Image">
+
+                            <p></p>
+                            <p>介紹</p>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h2>土魠魚羹麵</h2>
+                                    <img src="https://images.weserv.nl/?url=blogwww.s3.amazonaws.com%2FBlogfiles%2F1997%2F160659.jpg&output=webp" alt="Page 1 Image">
+                                    <p>第一名</p>
+                                    <p>土魠魚炸的超級香</p>
+                                </div>
+                            </section>
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h3>炸排骨</h3>
+                                    <img src="https://images.weserv.nl/?url=blogwww.s3.amazonaws.com%2FBlogfiles%2F1997%2F160660.jpg&output=webp" alt="Page 1 Image">
+                                    <p>第一點五名</p>
+                                    <p>我最後一次吃到菜瓜布,所以扣分</p>
+                                    
+                                </div>
+                            </section>
+
+							
+							<ul>
+                                    <li>地址:236 新北市土城區學府路一段190號</li>
+                                    <li>電話:02 2274 3409</li>
+                            </ul>
+                           
+                            <section class="page1-images">
+                                <div class="text-container">
+                                    <h5>這是菜單</h5>
+                                    <img src="https://pic.pimg.tw/ss1985030738/1425222002-3521186477_wn.jpg" alt="Page 1 Image"
+                                    <p></p>
+                                    <p></p> 
+                                </div>
+                            </section>
+                            
+                           
+                            
+                    `;
+                
+                    break;
+                
+                default:
+                    textContainer.innerHTML = "<p>Page not found.</p>";
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
